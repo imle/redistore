@@ -207,7 +207,7 @@ func NewRediStoreWithPool(pool *redis.Pool, keyPairs ...[]byte) (*RediStore, err
 		},
 		DefaultMaxAge: 60 * 20, // 20 minutes seems like a reasonable default
 		maxLength:     4096,
-		keyPrefix:     "session_",
+		keyPrefix:     "session:",
 		serializer:    GobSerializer{},
 	}
 	_, err := rs.ping()
